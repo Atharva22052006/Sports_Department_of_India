@@ -1,0 +1,111 @@
+<header>
+    <nav>
+    <ul class="nav-links">
+    <button class="dashboard-btn"
+    onclick="toggleSidebar()">☰ Dashboard</button>
+    <li><a href="#home">Home</a></li>
+    <li><a href="F:\WD mini project\aboutus.html">About Us</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#photos">Photo Gallery</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <link rel="stylesheet" href="main.css">
+    </nav>
+    <div class="sidebar" id="sidebar">
+    <button class="close-btn"
+    onclick="toggleSidebar()">✖</button>
+    <ul>
+    <li><a href="#">Objectives</a></li>
+    <li><a href="F:\WD mini project\achievements.html">Achievements</a></li>
+    <li><a href="#">Schemes</a></li>
+    <li><a href="#">National Sports University</a></li>
+    <li><a href="#">National Policies</a></li>
+    <li><a href="#">National Youth Corps</a></li>
+    <li><a href="#">National Sports Events</a></li>
+    <li><a href="#">International Sports Event</a></li>
+    <li><a href="#">National Youth Festival</a></li>
+    <li><a href="#">Career Opportunities</a></li>
+    <li><a href="#">Upcoming Mega Events</a></li>
+    <li><a href="F:\WD mini project\antidoping.html">National Anti Doping Agency</a></li>
+    </ul>
+    </div>
+
+<header>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+</script>
+<div class="logo">
+    <img src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png" alt="Home">
+    <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bhara
+t.png">
+    <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg">
+</div>
+</header>
+<main>
+    <div class="container">
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>For any inquiries, please feel free to contact us through the following channels:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:contact@youthaffairs.gov.in">contact@youthaffairs.gov.in</a></li>
+                <br>
+                <li><strong>Phone:</strong> +91 11 1234 5678</li>
+                <br>
+                <li><strong>Address:</strong> Ministry of Youth Affairs and Sports, Shastri Bhawan, New Delhi, India</li>
+            </ul>
+        </section>
+
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+</main>
+<footer class="footer">
+<h3>SUPPORT ORGANISATIONS</h3>
+<div class="image-container">
+    <a href="https://yuva.gov.in/"><img src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo
+1"></a>
+    <a href="https://sportsauthorityofindia.nic.in/"><img
+            src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png" alt="Logo 2"></a>
+    <a href="https://www.rgniyd.gov.in/"><img src="https://yas.gov.in/sites/default/files/partner04.png" alt="Logo
+3"></a>
+    <a href="https://www.nadaindia.org/"><img src="https://yas.gov.in/sites/default/files/partner05.png" alt="Logo
+4"></a>
+    <a href="https://yas.gov.in/sports/khelo-india-national-programme-developm
+ent-sports-0"><img src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20ta
+gline-02.jpg" alt="Logo 5"></a>
+    <a href="http://nsu.ac.in/"><img src="https://yas.gov.in/sites/default/files/logo.png" alt="Logo 6"></a>
+    <a href="https://nss.gov.in/"><img src="https://yas.gov.in/sites/default/files/partner01.png" alt="Logo
+7"></a>
+    <a href="http://ndtlindia.com/"><i src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
+            alt="Logo 8"></a>
+    <a href="https://nss.gov.in/"><img src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
+            alt="Logo 9"></a>
+</div>
+<div class="copyright">
+    &copy; 2024 Department of Sports. All rights reserved.
+</div>
+</footer>

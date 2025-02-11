@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports overview</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .logo img {
+        margin: 30px 0px 0px 100px;
+    }
+
+    nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0px 15px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px 20px;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #1b0550;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        /* Hidden by default */
+        width: 250px;
+        height: 100%;
+        background-color: #1b0550;
+        color: #fff;
+        padding: 20px;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .sidebar.active {
+        left: 0;
+        /* Show when active */
+    }
+
+    .sidebar .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #1b0550;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        padding: 10px 10px;
+        border-radius: 3px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin-top: 50px;
+    }
+
+    .sidebar ul li {
+        margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+        background-color: #555;
+    }
+
+    .dashboard-btn {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        padding: 0px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .dashboard-btn:hover {
+        background-color: #333;
+    }
+
+
+    h1 {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+
+    .details {
+        margin: 30px auto;
+        max-width: 800px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .details h2 {
+        color: #333;
+        margin-top: 20px;
+    }
+
+    .details p {
+        font-size: 1rem;
+        margin: 10px 0;
+        color: #555;
+    }
+
+
+    .details ol {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    .details ol li {
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 50px;
+        animation: scroll 30s linear infinite;
+    }
+
+    .image-container img {
+        width: 100px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .footer .copyright {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #ccc;
+    }
+
+
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+    .details {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .details:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .details {
+            margin: 20px 10px;
+            padding: 15px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <button class="dashboard-btn" onclick="toggleSidebar()">☰ Dashboard</button>
+                <li><a href="#home">Home</a></li>
+                <li><a href="F:\WD mini project\aboutus.html">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#photos">Photo Gallery</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar" id="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">✖</button>
+            <ul>
+                <li><a href="#">Objectives</a></li>
+                <li><a href="F:\WD mini project\achievements.html">Achievements</a></li>
+                <li><a href="#">Schemes</a></li>
+                <li><a href="#">National Sports University</a></li>
+                <li><a href="#">National Policies</a></li>
+                <li><a href="#">National Youth Corps</a></li>
+                <li><a href="#">National Sports Events</a></li>
+                <li><a href="#">International Sports Event</a></li>
+                <li><a href="#">National Youth Festival</a></li>
+                <li><a href="#">National Youth Corps</a></li>
+                <li><a href="#">Career Opportunities</a></li>
+                <li><a href="#">Upcoming Mega Events</a></li>
+                <li><a href="F:\WD mini project\antidoping.html">National Anti Doping Agency</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+        </script>
+        <div class="logo">
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png" alt="Home">
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bharat.png">
+
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg">
+        </div>
+    </header>
+    <h1>Common Wealth Games 2018</h1>
+
+    <div class="details">
+
+         <br>The 2018 Commonwealth Games in Gold Coast, Australia, were a historic moment for Indian sports. India's
+            exceptional performance secured them the third position on the medal table, a testament to the nation's
+            growing sporting prowess.
+
+        <br> <br>
+        <h3>Shooting Dominance:</h3>The Indian shooting team emerged as a force, clinching 16 medals, including 7 gold.
+        Young sensation Manu Bhaker, at just 16 years old, set a new Games record in the women's 10m air pistol event,
+        showcasing India's bright future in shooting. <br><br>
+        <img src="manu bhaker.jpg" alt="Manu Bhaker" height="230"><br> <br>
+        Apart from Manu Bhaker's record-breaking performance, other notable achievements in shooting included gold
+        medals by Heena Sidhu in the women's 10m air pistol and Jitu Rai in the men's 50m pistol. <br> <br>
+
+        <h3>Badminton Brilliance:</h3>P.V. Sindhu led the Indian badminton contingent to 2 gold and 2 bronze medals,
+        further elevating the sport's popularity in the nation. <br><br>
+        <img src="pv-sindhu-.jpg" alt="PV Sindhu" height="240"><br> <br>
+        P.V. Sindhu's gold medal in women's singles was complemented by Lakshya Sen's gold in men's singles and the
+        men's doubles pair of Satwiksairaj Rankireddy and Chirag Shetty's gold medal win. <br> <br>
+
+        <h3>Table Tennis Triumph:</h3> Manika Batra shone brightly in table tennis, contributing significantly to
+        India's medal tally with 2 gold and 4 bronze medals. <br> <br>
+        <img src="manika batra.jpeg" alt="Manika Batra" height="240"> <br> <br>
+        Manika Batra's gold medals in women's singles and mixed doubles, along with Sharath Kamal's gold in men's
+        singles, highlighted India's growing strength in table tennis. <br> <br>
+
+        <h3>Weightlifting Prowess:</h3> India reigned supreme in weightlifting, securing 3 gold, 5 silver, and 2 bronze
+        medals. This stellar performance solidified India's position as a weightlifting powerhouse.Apart from that,
+        Mirabai Chanu, a renowned weightlifter, added another gold to her illustrious career in the women's 49kg
+        category.<br> <br>
+
+        <h3>Wrestling Triumphs:</h3>Indian wrestlers displayed remarkable strength, winning 2 gold, 2 silver, and 2
+        bronze medals. Also, Bajrang Punia, Sakshi Malik, and Deepak Punia secured gold medals in their respective
+        weight categories, showcasing India's dominance in wrestling. <br> <br>
+
+        <h3>A New Era for Indian Sports:</h3>
+
+        The 2018 Commonwealth Games marked a turning point for Indian sports. The impressive medal haul not only boosted
+        national pride but also inspired a new generation of athletes. India's consistent performance across various
+        disciplines demonstrated the nation's growing sporting potential and its journey towards becoming a global
+        sporting powerhouse.
+        <br> <br>
+
+        <footer class="footer">
+            <h3>SUPPORT ORGANISATIONS</h3>
+            <div class="image-container">
+              <a href="https://yuva.gov.in/"><img
+        src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo
+        1"></a>
+              <a href="https://sportsauthorityofindia.nic.in/"><img
+        src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png"
+        alt="Logo 2"></a>
+              <a href="https://www.rgniyd.gov.in/"><img
+        src="https://yas.gov.in/sites/default/files/partner04.png" alt="Logo
+        3"></a>
+              <a href="https://www.nadaindia.org/"><img
+        src="https://yas.gov.in/sites/default/files/partner05.png" alt="Logo
+        4"></a>
+              <a
+        href="https://yas.gov.in/sports/khelo-india-national-programme-developm
+        ent-sports-0"><img
+        src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20ta
+        gline-02.jpg" alt="Logo 5"></a>
+              <a href="http://nsu.ac.in/"><img
+        src="https://yas.gov.in/sites/default/files/logo.png" alt="Logo 6"></a>
+              <a href="https://nss.gov.in/"><img
+        src="https://yas.gov.in/sites/default/files/partner01.png" alt="Logo
+        7"></a>
+              <a href="http://ndtlindia.com/"><img
+        src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
+        alt="Logo 8"></a>
+              <a href="https://nss.gov.in/"><img
+        src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
+        alt="Logo 9"></a>
+            </div>
+            <div class="copyright">
+              &copy; 2024 Department of Sports. All rights reserved.
+            </div>
+        
+          </footer>
+        </body>
+        </html>

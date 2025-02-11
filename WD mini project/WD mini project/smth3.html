@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports overview</title>
+</head>
+<style>
+    
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+*{
+    padding: 0;
+margin: 0;
+    box-sizing: border-box;
+}
+.logo img{
+    margin: 30px 0px 0px 100px;
+}
+nav {
+    background-color:#333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+  .nav-links li {
+    margin: 0px 15px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #1b0550;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: #1b0550;
+  color: #fff;
+  padding: 20px;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+.sidebar.active {
+  left: 0; /* Show when active */
+}
+.sidebar .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #1b0550;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 10px;
+  border-radius: 3px;
+}
+.sidebar ul {
+  list-style: none;
+  margin-top: 50px;
+}
+.sidebar ul li {
+  margin: 15px 0;
+}
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.sidebar ul li a:hover {
+  background-color: #555;
+}
+.dashboard-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 0px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.dashboard-btn:hover {
+  background-color: #333;
+}
+
+
+h1 {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+
+.details {
+  margin: 30px auto;
+  max-width: 800px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.details h2 {
+  color: #333;
+  margin-top: 20px;
+}
+
+.details p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+
+.details ol {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.details ol li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+  overflow: hidden;
+}
+.footer h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 50px;
+  animation: scroll 30s linear infinite;
+}
+.image-container img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+} 
+}
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.details {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.details:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .details {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+}
+
+</style>
+<body>
+  <header>
+    <nav>
+        <ul class="nav-links">
+            <button class="dashboard-btn"
+onclick="toggleSidebar()">☰ Dashboard</button> <li><a href="#home">Home</a></li>
+            <li><a href="F:\WD mini project\aboutus.html">About Us</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#photos">Photo Gallery</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+    </nav>
+    <div class="sidebar" id="sidebar">
+<button class="close-btn" onclick="toggleSidebar()">✖</button>
+      <ul>
+        <li><a href="#">Objectives</a></li>
+        <li><a href="F:\WD mini project\achievements.html">Achievements</a></li>
+        <li><a href="#">Schemes</a></li>
+        <li><a href="#">National Sports University</a></li>
+        <li><a href="#">National Policies</a></li>
+        <li><a href="#">National Youth Corps</a></li>
+        <li><a href="#">National Sports Events</a></li>
+        <li><a href="#">International Sports Event</a></li>
+        <li><a href="#">National Youth Festival</a></li>
+        <li><a href="#">National Youth Corps</a></li>
+        <li><a href="#">Career Opportunities</a></li>
+        <li><a href="#">Upcoming Mega Events</a></li>
+        <li><a href="F:\WD mini project\antidoping.html">National Anti Doping Agency</a></li>
+</ul> </div>
+    <script>
+        function toggleSidebar() {
+          const sidebar = document.getElementById('sidebar');
+          sidebar.classList.toggle('active');
+        }
+      </script>
+    <div class="logo">
+        <img
+        src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png"
+        alt="Home">
+                    <img
+        src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bharat.png">
+        
+                    <img
+        src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg">
+                </div>
+            </header>    
+  <h1>Olympics 2020</h1>
+  
+  <div class="details">
+    <h2>India's Achievements at the Tokyo 2020 Olympics</h2> <br>
+
+The Tokyo 2020 Olympics marked a historic milestone for India, with the nation achieving its most successful performance in a single Games. Here's a detailed breakdown of the key achievements: <br> <br>
+
+<h3>Medal Tally:</h3>
+<ul>
+<li>Gold: 1</li>
+<li>Silver: 2</li>
+<li>Bronze: 4</li>
+<li>Total: 7</li>
+</ul> 
+<h2>Gold Medal:</h2> <br>
+
+<h3>Neeraj Chopra (Javelin Throw):</h3> Chopra's historic gold in the men's javelin throw made him the first Indian to win an Olympic gold medal in athletics and only the second Indian to win an individual gold medal at the Olympics. His winning throw of 87.58 meters set a new Olympic record. <br> <br>
+<img src="neeraj.jpg" alt="Neeraj Chopra" height="200"> <br> 
+
+<h2>Silver Medals:</h2> <br>
+
+<h3>Mirabai Chanu (Weightlifting - Women's 49 kg):</h3>
+Chanu secured India's first medal of the Games with a silver in the women's 49 kg weightlifting event.  <br> <br>
+<img src="mirabai.jpeg" alt="" height="200"> <br> <br>
+<h3>Ravi Dahiya (Wrestling - Men's Freestyle 57 kg):</h3> clinched a silver medal in the men's freestyle 57 kg wrestling category.<br> <br>
+<img src="ravi ddahiya.jpeg" alt="" height="200"> <br>
+
+<h2>Bronze Medals:</h2> <br>
+
+<h3>Lovlina Borgohain (Boxing - Women's Welterweight):</h3> Borgohain won a bronze medal in the women's welterweight boxing category. <br> <br>
+<img src="Lovlina-Borgohain1.jpg" alt="" height="200"> <br> <br>
+
+<h3>P.V. Sindhu (Badminton - Women's Singles):</h3> Sindhu secured her second consecutive Olympic medal, winning bronze in the women's singles badminton event. <br> <br>
+<img src="pv-sindhu-.jpg" alt="" height="200"> <br> <br>
+
+<h3>Bajrang Punia (Wrestling - Men's Freestyle 65 kg):</h3> Punia earned a bronze medal in the men's freestyle 65 kg wrestling category. <br> <br>
+<img src="Bajrang-punia.jpg" alt="" height="200"> <br> <br>
+
+<h3>Men's Hockey Team:</h3> The Indian men's hockey team ended a 41-year medal drought by winning a bronze medal, showcasing their consistent performance in the sport. <br> <br>
+<img src="hockey.jpeg" alt="" height="200"> <br> <br>
+
+<h2>Other Notable Performances:</h2> <br>
+
+<h3>Men's 4x400m Relay Team:</h3> The men's 4x400m relay team finished fourth, narrowly missing out on a medal but setting a new national record. <br> <br>
+<h3>Women's Hockey Team:</h3> The women's hockey team achieved their best-ever Olympic finish, securing a fourth-place position. <br>
+
+<h2>Key Takeaways:</h2> <br>
+
+<h3>Historic Gold in Athletics:</h3> Neeraj Chopra's gold medal in javelin throw marked a significant breakthrough for Indian athletics. <br> <br>
+<h3>Consistent Performance Across Disciplines:</h3> India's success extended beyond individual sports, with the men's hockey team and women's hockey team also achieving notable results. <br> <br>
+<h3>Rising Sporting Potential:</h3> The Tokyo 2020 Olympics demonstrated India's growing sporting potential and its journey towards becoming a global sporting powerhouse. <br>
+
+<h2>In Conclusion:</h2>
+
+The Tokyo 2020 Olympics were a watershed moment for Indian sports. The seven medals won, including the historic gold in athletics, showcased the dedication, hard work, and talent of Indian athletes. These achievements not only inspired national pride but also laid the foundation for future success in international sporting events. <br> <br>
+
+  <footer class="footer">
+    <h3>SUPPORT ORGANISATIONS</h3>
+    <div class="image-container">
+      <a href="https://yuva.gov.in/"><img
+src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo
+1"></a>
+      <a href="https://sportsauthorityofindia.nic.in/"><img
+src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png"
+alt="Logo 2"></a>
+      <a href="https://www.rgniyd.gov.in/"><img
+src="https://yas.gov.in/sites/default/files/partner04.png" alt="Logo
+3"></a>
+      <a href="https://www.nadaindia.org/"><img
+src="https://yas.gov.in/sites/default/files/partner05.png" alt="Logo
+4"></a>
+      <a
+href="https://yas.gov.in/sports/khelo-india-national-programme-developm
+ent-sports-0"><img
+src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20ta
+gline-02.jpg" alt="Logo 5"></a>
+      <a href="http://nsu.ac.in/"><img
+src="https://yas.gov.in/sites/default/files/logo.png" alt="Logo 6"></a>
+      <a href="https://nss.gov.in/"><img
+src="https://yas.gov.in/sites/default/files/partner01.png" alt="Logo
+7"></a>
+      <a href="http://ndtlindia.com/"><img
+src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
+alt="Logo 8"></a>
+      <a href="https://nss.gov.in/"><img
+src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
+alt="Logo 9"></a>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Department of Sports. All rights reserved.
+    </div>
+
+  </footer>
+</body>
+</html>

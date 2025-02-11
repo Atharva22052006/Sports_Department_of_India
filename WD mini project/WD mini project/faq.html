@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Sports</title>
+	<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="faq.css">
+</head>
+    <header>
+<nav>
+<ul class="nav-links">
+<button class="dashboard-btn"
+onclick="toggleSidebar()">☰ Dashboard</button>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#photos">Photo And Video Gallery</a></li>
+<li><a href="#faqs">FAQs</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</nav>
+<div class="sidebar" id="sidebar">
+<button class="close-btn"
+onclick="toggleSidebar()">✖</button>
+<ul>
+<li><a href="#">Objectives</a></li>
+<li><a href="#">Achievements</a></li>
+<li><a href="#">Schemes</a></li>
+<li><a href="#">National Sports University</a></li>
+<li><a href="#">National Policies</a></li>
+<li><a href="#">National Youth Corps</a></li>
+<li><a href="#">National Sports Events</a></li>
+<li><a href="#">International Sports Event</a></li>
+<li><a href="#">National Youth Festival</a></li>
+<li><a href="#">National Youth Corps</a></li>
+<li><a href="#">Career Opportunities</a></li>
+<li><a href="#">Upcoming Mega Events</a></li>
+</ul>
+</div>
+<script>
+function toggleSidebar() {
+const sidebar = document.getElementById('sidebar');
+sidebar.classList.toggle('active');
+}
+</script>
+<div class="logo">
+<img
+src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png"
+alt="Home">
+<img
+src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bhara
+t.png">
+<img
+src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg">
+</div>
+    </header>
+    <header>
+      <h1>Frequently Asked Questions</h1>
+      <p>Your queries about the Department of Sports are answered here!</p>
+    </header>
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="faq">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is the role of the Department of Sports?</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>The Department of Sports promotes and develops sports nationwide through policy-making, infrastructure development, and athlete support. It provides financial aid, scholarships, and training, organizes national and international events, and fosters youth participation. Additionally, it works to ensure inclusivity in sports, supporting women, differently-abled individuals, and marginalized communities.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can athletes apply for government support?</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Athletes can apply for government support through the official Department of Sports portal by accessing programs like scholarships, training grants, and financial aid schemes. They need to register, provide necessary documentation, and meet eligibility criteria specific to the program.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are there scholarships available for young athletes?</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, scholarships are available for young athletes through various government programs. These scholarships support training, education, and participation in competitions. Details and application guidelines can be found on the Department of Sports website.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I access training facilities under the Department of Sports?</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can access training facilities under the Department of Sports by applying through their official website or directly contacting registered sports academies and centers of excellence. Eligibility criteria and documentation may vary based on the facility and program.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does the department provide funding for organizing sports events?</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, the Department of Sports provides funding for organizing sports events through specific government schemes. Event organizers can apply for financial support by submitting proposals and meeting the eligibility criteria outlined by the department.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Toggle FAQ Answers
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', !expanded);
+          answer.style.maxHeight = expanded ? null : answer.scrollHeight + "px";
+        });
+      });
+    </script>
+    <footer class="footer">
+      <h3>SUPPORT ORGANISATIONS</h3>
+      <div class="image-container">
+      <a href="https://yuva.gov.in/"><img
+      src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo
+      1"></a>
+      <a href="https://sportsauthorityofindia.nic.in/"><img
+      src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png"
+      alt="Logo 2"></a>
+      <a href="https://www.rgniyd.gov.in/"><img
+      src="https://yas.gov.in/sites/default/files/partner04.png" alt="Logo
+      3"></a>
+      <a href="https://www.nadaindia.org/"><img
+      src="https://yas.gov.in/sites/default/files/partner05.png" alt="Logo
+      4"></a>
+      <a
+      href="https://yas.gov.in/sports/khelo-india-national-programme-developm
+      ent-sports-0"><img
+      src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20ta
+      gline-02.jpg" alt="Logo 5"></a>
+      <a href="http://nsu.ac.in/"><img
+      src="https://yas.gov.in/sites/default/files/logo.png" alt="Logo 6"></a>
+      <a href="https://nss.gov.in/"><img
+      src="https://yas.gov.in/sites/default/files/partner01.png" alt="Logo
+      7"></a>
+      <a href="http://ndtlindia.com/"><img
+      src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
+      alt="Logo 8"></a>
+      <a href="https://nss.gov.in/"><img
+      src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
+      alt="Logo 9"></a>
+  </div>
+  <div class="copyright">
+  &copy; 2024 Department of Sports. All rights reserved.
+  </div>
+  </footer>
+  </html>
