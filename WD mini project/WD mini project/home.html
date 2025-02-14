@@ -54,8 +54,7 @@
       </div>
       <script>
         function toggleSidebar() {
-          const sidebar = document.getElementById("sidebar");
-          sidebar.classList.toggle("active");
+          $("#sidebar").toggleClass("active");
         }
       </script>
       <div class="logo">
@@ -227,5 +226,6 @@
         &copy; 2024 Department of Sports. All rights reserved.
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </body>
 </html>
