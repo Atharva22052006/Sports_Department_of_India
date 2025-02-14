@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        .login-container {
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            border: none;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #5a67e5, #653ea0);
+        }
+
+        nav {
+            background-color: #000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1b0550;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .logo-container img {
+            height: 80px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <button class="dashboard-btn" onclick="toggleSidebar()">☰ Dashboard</button>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#photos">Photo Gallery</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo-container">
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png" alt="Logo 1">
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bharat.png" alt="Logo 2">
+            <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg" alt="Logo 3">
+        </div>
+    </header>
+
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <h2>LOGIN</h2><br>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <div id="message" class="mt-3"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>SUPPORT ORGANISATIONS</h3>
+        <div class="logo-container">
+            <a href="https://yuva.gov.in/"><img src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo 4"></a>
+            <a href="https://sportsauthorityofindia.nic.in/"><img src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png" alt="Logo 5"></a>
+            <a href="https://www.rgniyd.gov.in/"><img src="https://yas.gov.in/sites/default/files/partner04.png" alt="Logo 6"></a>
+            <a href="https://www.nadaindia.org/"><img src="https://yas.gov.in/sites/default/files/partner05.png" alt="Logo 7"></a>
+            <a href="https://yas.gov.in/sports/khelo-india-national-programme-developm
+ent-sports-0"><img src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20tagline-02.jpg" alt="Logo 8"></a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Department of Sports. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        $("#registerForm").submit(function (event) {
+            event.preventDefault();
+            let password = $("#password").val();
+            let confirmPassword = $("#confirmPassword").val();
+
+            if (password.length < 6 || password.length > 8) {
+                Swal.fire("Error", "Password must be between 6 and 8 characters!", "error");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                Swal.fire("Error", "Passwords do not match!", "error");
+                return;
+            }
+
+            Swal.fire("Success", "Registration Successful!", "success");
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
