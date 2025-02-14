@@ -1,10 +1,20 @@
 <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sports Opportunities</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq0TcOqz7cl0Z4M3f4G1nmjJ0Y3wYUP6A6d9Wx7FqB9bATyZp5" crossorigin="anonymous">
+        </head>
     <nav>
     <ul class="nav-links">
     <button class="dashboard-btn"
     onclick="toggleSidebar()">☰ Dashboard</button>
     <li><a href="#home">Home</a></li>
-    <li><a href="F:\WD mini project\aboutus.html">About Us</a></li>
+    <li><a href="#about">About Us</a></li>
     <li><a href="#events">Events</a></li>
     <li><a href="#photos">Photo Gallery</a></li>
     <li><a href="#faqs">FAQs</a></li>
@@ -17,7 +27,7 @@
     onclick="toggleSidebar()">✖</button>
     <ul>
     <li><a href="#">Objectives</a></li>
-    <li><a href="F:\WD mini project\achievements.html">Achievements</a></li>
+    <li><a href="#">Achievements</a></li>
     <li><a href="#">Schemes</a></li>
     <li><a href="#">National Sports University</a></li>
     <li><a href="#">National Policies</a></li>
@@ -25,64 +35,73 @@
     <li><a href="#">National Sports Events</a></li>
     <li><a href="#">International Sports Event</a></li>
     <li><a href="#">National Youth Festival</a></li>
+    <li><a href="#">National Youth Corps</a></li>
     <li><a href="#">Career Opportunities</a></li>
     <li><a href="#">Upcoming Mega Events</a></li>
-    <li><a href="F:\WD mini project\antidoping.html">National Anti Doping Agency</a></li>
     </ul>
     </div>
-
-<header>
-<script>
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('active');
-    }
-</script>
+</header>
 <div class="logo">
     <img src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png" alt="Home">
     <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bhara
 t.png">
-    <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg">
-    <h1>National Sports Events</h1>
-</div>
-</header>
+    <img src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg"> 
 <main>
-    <link rel="stylesheet" href="main.css">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegqoRyMWP9bZN_DXWIbXUj5mMic8Aho0Lcw&s"height=200>
+    
     <div class="container">
-        <section class="event-list">
-            <h2>Upcoming Events</h2>
-            <div class="event">
-                <h3>National Youth Games 2024</h3>
-                <p><strong>Date:</strong> March 1-5, 2024</p>
-                <p><strong>Location:</strong> Patiala, Punjab</p>
-                <p><strong>Description:</strong> A multi-sport event for the youth, featuring various disciplines including athletics, swimming, and team sports.</p>
-            </div>
-
-            <div class="event">
-                <h3>National Sports Day Celebration</h3>
-                <p><strong>Date:</strong> August 29, 2024</p>
-                <p><strong>Location:</strong> New Delhi, India</p>
-                <p><strong>Description:</strong> A day to celebrate sports, featuring exhibitions, tournaments, and speeches from notable sports personalities.</p>
-            </div>
-
-            <div class="event">
-                <h3>National Indoor Sports Championship</h3>
-                <p><strong>Date:</strong> October 15-20, 2024</p>
-                <p><strong>Location:</strong> Bangalore, Karnataka</p>
-                <p><strong>Description:</strong> An indoor sports championship featuring badminton, table tennis, wrestling, and more.</p>
-            </div>
-
-            <div class="event">
-                <h3>National School Sports Meet</h3>
-                <p><strong>Date:</strong> November 10-14, 2024</p>
-                <p><strong>Location:</strong> Mumbai, Maharashtra</p>
-                <p><strong>Description:</strong> A sports meet for students across India, with competitions in athletics, gymnastics, and team sports.</p>
+        <h1 class="text-center mb-4">National Sports Events</h1>
+        <img src="https://images.javatpoint.com/gk/images/major-sports-events-in-the-world2.jpg">
+        </div>
+        
+        <section class="container mt-5">
+             <h2 class="text-center mb-5">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">National Youth Games 2024</h3>
+                            <p><strong>Date:</strong> March 1-5, 2024</p>
+                            <p><strong>Location:</strong> Patiala, Punjab</p>
+                            <p><strong>Description:</strong> A multi-sport event for the youth, featuring various disciplines including athletics, swimming, and team sports.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">National Sports Day Celebration</h3>
+                            <p><strong>Date:</strong> August 29, 2024</p>
+                            <p><strong>Location:</strong> New Delhi, India</p>
+                            <p><strong>Description:</strong> A day to celebrate sports, featuring exhibitions, tournaments, and speeches from notable sports personalities.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">National Indoor Sports Championship</h3>
+                            <p><strong>Date:</strong> October 15-20, 2024</p>
+                            <p><strong>Location:</strong> Bangalore, Karnataka</p>
+                            <p><strong>Description:</strong> An indoor sports championship featuring badminton, table tennis, wrestling, and more.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">National School Sports Meet</h3>
+                            <p><strong>Date:</strong> November 10-14, 2024</p>
+                            <p><strong>Location:</strong> Mumbai, Maharashtra</p>
+                            <p><strong>Description:</strong> A sports meet for students across India, with competitions in athletics, gymnastics, and team sports.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-    </div>
-</main>
-<footer class="footer">
+<footer class="footer" padding="10px">
     <h3>SUPPORT ORGANISATIONS</h3>
     <div class="image-container">
         <a href="https://yuva.gov.in/"><img src="https://yas.gov.in/sites/default/files/Yuva_beta.png" alt="Logo
@@ -108,3 +127,15 @@ t.png">
         &copy; 2024 Department of Sports. All rights reserved.
     </div>
     </footer>
+    <script>
+        function toggleSidebar() {
+     const sidebar = document.getElementById('sidebar');
+     sidebar.classList.toggle('active');
+     }
+     function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+     </script>
+</body>
+</html>
