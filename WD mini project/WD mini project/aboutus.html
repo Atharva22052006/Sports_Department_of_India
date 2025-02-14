@@ -1,158 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Sports Quiz</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li>
-          <button class="dashboard-btn" onclick="toggleSidebar()">
-            ☰ Dashboard
-          </button>
-        </li>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="megaevents.html">Events</a></li>
-        <li><a href="photo.html">Photo and Video Gallery</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-      </ul>
-    </nav>
-    <div class="sidebar" id="sidebar">
-      <button class="close-btn" onclick="toggleSidebar()">✖</button>
-      <ul>
-        <li><a href="objective.html">Objectives</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="schememain.html">Schemes</a></li>
-        <li><a href="university.html">National Sports University</a></li>
-        <li><a href="policies.html">National Policies</a></li>
-        <li><a href="youthcorps.html">National Youth Corps</a></li>
-        <li><a href="national-sports.html">National Sports Events</a></li>
-        <li><a href="international-sports.html">International Sports Event</a></li>
-        <li><a href="youthfestival.html">National Youth Festival</a></li>
-        <li><a href="career.html">Career Opportunities</a></li>
-        <li><a href="megaevents.html">Upcoming Mega Events</a></li>
-        <li><a href="antidoping.html">National Anti Doping Agency</a></li>
-      </ul>
-    </div>
-    <div class="logo">
-      <img
-        src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png"
-        alt="Department of Sports Logo"
-      />
-      <img
-        src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bharat.png"
-        alt="Swach Bharat Logo"
-      />
-      <img
-        src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg"
-        alt="Akam Logo"
-      />
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Department of Sports</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about-style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <button class="dashboard-btn" onclick="toggleSidebar()">
+              ☰ Dashboard
+            </button>
+          </li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="megaevents.html">Events</a></li>
+          <li><a href="photo.html">Photo and Video Gallery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        <ul>
+          <li><a href="objective.html">Objectives</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="schememain.html">Schemes</a></li>
+          <li><a href="university.html">National Sports University</a></li>
+          <li><a href="policies.html">National Policies</a></li>
+          <li><a href="youthcorps.html">National Youth Corps</a></li>
+          <li><a href="national-sports.html">National Sports Events</a></li>
+          <li><a href="international-sports.html">International Sports Event</a></li>
+          <li><a href="youthfestival.html">National Youth Festival</a></li>
+          <li><a href="career.html">Career Opportunities</a></li>
+          <li><a href="megaevents.html">Upcoming Mega Events</a></li>
+          <li><a href="antidoping.html">National Anti Doping Agency</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img
+          src="https://yas.gov.in/sites/all/themes/youthaffair/logo1.png"
+          alt="Department of Sports Logo"
+        />
+        <img
+          src="https://yas.gov.in/sites/all/themes/youthaffair/images/swach-bharat.png"
+          alt="Swach Bharat Logo"
+        />
+        <img
+          src="https://yas.gov.in/sites/all/themes/youthaffair/images/akam.jpg"
+          alt="Akam Logo"
+        />
+      </div>
+    </header>
 
-  <!-- Main Quiz Section -->
-  <main>
-    <!-- Username Input -->
-    <div id="username-section">
-      <h3>Welcome to the Indian Sports Quiz!</h3>
-      <input type="text" id="username" placeholder="Enter your username" required>
-      <button id="start-quiz">Start Quiz</button>
-    </div>
+    <main>
+      <section class="overview">
+        <h2>Overview</h2>
+        <p>
+          The Ministry of Youth Affairs & Sports functioned under the overall
+          guidance of the Minister of State (Independent Charge) for Youth Affairs
+          & Sports during the year. In April 2008, two separate Departments,
+          namely, Department of Youth Affairs and Department of Sports, were
+          created under the Ministry, each Department under the charge of a
+          Secretary to the Government of India. The Department of Sports is a
+          government entity dedicated to promoting sports, fitness, and wellness
+          among citizens. Established with the vision of fostering a culture of
+          physical activity and teamwork, the department plays a crucial role in
+          shaping the future of sports in the nation.
+        </p>
+      </section>
 
-    <!-- Quiz Container -->
-    <div id="quiz-container" class="hidden">
-      <h3 id="question-number">Question 1</h3>
-      <p id="question-text"></p>
-      <ul id="options-list"></ul>
-      <p id="timer">Time left: 20 seconds</p>
-      <button id="next-button" disabled>Next</button>
-    </div>
+      <section class="mission">
+        <h2>Our Mission</h2>
+        <p>
+          To inspire and enable participation in sports and physical activities
+          across all age groups, ensuring inclusivity, excellence, and
+          opportunities for all.
+        </p>
+      </section>
 
-    <!-- Results Section -->
-    <div id="results-section" class="hidden">
-      <h3 id="results-heading"></h3>
-      <p id="results-feedback"></p>
-      <button id="restart-quiz">Restart Quiz</button>
-    </div>
-  </main>
+      <section class="objectives">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            Develop infrastructure and facilities for sports at the grassroots and
+            elite levels.
+          </li>
+          <li>
+            Organize national and international sports events to encourage
+            participation.
+          </li>
+          <li>
+            Provide support and training for athletes to compete at the highest
+            levels.
+          </li>
+          <li>
+            Collaborate with schools, colleges, and communities to promote
+            physical education.
+          </li>
+        </ul>
+      </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <h3>SUPPORT ORGANISATIONS</h3>
-    <div class="image-container">
-      <a href="https://yuva.gov.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/Yuva_beta.png"
-          alt="Yuva Logo"
-        />
-      </a>
-      <a href="https://sportsauthorityofindia.nic.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png"
-          alt="SAI Logo"
-        />
-      </a>
-      <a href="https://www.rgniyd.gov.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/partner04.png"
-          alt="RG Logo"
-        />
-      </a>
-      <a href="https://www.nadaindia.org/">
-        <img
-          src="https://yas.gov.in/sites/default/files/partner05.png"
-          alt="NADA Logo"
-        />
-      </a>
-      <a href="https://yas.gov.in/sports/khelo-india-national-programme-development-sports-0">
-        <img
-          src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20tagline-02.jpg"
-          alt="Khelo India Logo"
-        />
-      </a>
-      <a href="http://nsu.ac.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/logo.png"
-          alt="NSU Logo"
-        />
-      </a>
-      <a href="https://nss.gov.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/partner01.png"
-          alt="NSS Logo"
-        />
-      </a>
-      <a href="http://ndtlindia.com/">
-        <img
-          src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
-          alt="NDTL Logo"
-        />
-      </a>
-      <a href="https://nss.gov.in/">
-        <img
-          src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
-          alt="Fit India Logo"
-        />
-      </a>
-    </div>
-    <div class="copyright">
-      &copy; 2024 Department of Sports. All rights reserved.
-    </div>
-  </footer>
+      <section class="achievements">
+        <h2>Our Achievements</h2>
+        <p>
+          Over the years, the Department of Sports has achieved remarkable
+          milestones, including:
+        </p>
+        <ul>
+          <li>Establishing over 200 sports training centers nationwide.</li>
+          <li>
+            Organizing international sports championships with over 50
+            participating countries.
+          </li>
+          <li>
+            Providing scholarships and funding for over 1,000 promising athletes
+            annually.
+          </li>
+        </ul>
+      </section>
+    </main>
 
-  <script src="quiz.js"></script> <!-- JavaScript for quiz logic -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("active");
-    }
-  </script>
-</body>
+    <footer class="footer">
+      <h3>SUPPORT ORGANISATIONS</h3>
+      <div class="image-container">
+        <a href="https://yuva.gov.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/Yuva_beta.png"
+            alt="Yuva Logo"
+          />
+        </a>
+        <a href="https://sportsauthorityofindia.nic.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/sai_trans_logo_new.png"
+            alt="SAI Logo"
+          />
+        </a>
+        <a href="https://www.rgniyd.gov.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/partner04.png"
+            alt="RG Logo"
+          />
+        </a>
+        <a href="https://www.nadaindia.org/">
+          <img
+            src="https://yas.gov.in/sites/default/files/partner05.png"
+            alt="NADA Logo"
+          />
+        </a>
+        <a href="https://yas.gov.in/sports/khelo-india-national-programme-development-sports-0">
+          <img
+            src="https://yas.gov.in/sites/default/files/Final%20Logo%20without%20tagline-02.jpg"
+            alt="Khelo India Logo"
+          />
+        </a>
+        <a href="http://nsu.ac.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/logo.png"
+            alt="NSU Logo"
+          />
+        </a>
+        <a href="https://nss.gov.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/partner01.png"
+            alt="NSS Logo"
+          />
+        </a>
+        <a href="http://ndtlindia.com/">
+          <img
+            src="https://yas.gov.in/sites/default/files/NDTL_Logo2015_0.png"
+            alt="NDTL Logo"
+          />
+        </a>
+        <a href="https://nss.gov.in/">
+          <img
+            src="https://yas.gov.in/sites/default/files/fit_india_logo-b.png"
+            alt="Fit India Logo"
+          />
+        </a>
+      </div>
+      <div class="copyright">
+        &copy; 2024 Department of Sports. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
