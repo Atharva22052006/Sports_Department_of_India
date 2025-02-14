@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Sports Quiz</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
+</head>
+<body>
+  <!-- Header -->
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo"> <!-- Replace with your logo -->
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="dashboard-btn">Dashboard</button>
+  </nav>
+
+  <!-- Main Quiz Section -->
+  <main>
+    <!-- Username Input -->
+    <div id="username-section">
+      <h3>Welcome to the Indian Sports Quiz!</h3>
+      <input type="text" id="username" placeholder="Enter your username" required>
+      <button id="start-quiz">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="hidden">
+      <h3 id="question-number">Question 1</h3>
+      <p id="question-text"></p>
+      <ul id="options-list"></ul>
+      <p id="timer">Time left: 20 seconds</p>
+      <button id="next-button" disabled>Next</button>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-section" class="hidden">
+      <h3 id="results-heading"></h3>
+      <p id="results-feedback"></p>
+      <button id="restart-quiz">Restart Quiz</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h3>Indian Sports Quiz</h3>
+    <div class="image-container">
+      <img src="sports1.jpg" alt="Sports Image 1">
+      <img src="sports2.jpg" alt="Sports Image 2">
+      <img src="sports3.jpg" alt="Sports Image 3">
+    </div>
+    <p class="copyright">&copy; 2023 Indian Sports Quiz. All rights reserved.</p>
+  </footer>
+
+  <script src="quiz.js"></script> <!-- JavaScript for quiz logic -->
+</body>
+</html>
